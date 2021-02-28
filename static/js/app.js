@@ -4,6 +4,7 @@ var tableData = data;
 // YOUR CODE HERE!
 // console.log(tableData);
 
+// Writes data to table initially
 let tbody = d3.select("tbody");
 
 tableData.forEach(function (sighting) {
@@ -17,6 +18,7 @@ tableData.forEach(function (sighting) {
 });
 
 
+// Gets data entered into form for button click
 var button = d3.select("#filter-btn");
 var form = d3.select("#datetime");
 
@@ -29,6 +31,11 @@ function runEnter(){
     var inputElement = d3.select("#datetime");
     var inputValue = inputElement.property("value");
     console.log(inputValue);
+    function filterSightings(date){
 
-
+        return date.datetime == inputValue;
+    }
+    var filteredSightings = data.filter(filterSightings);
+    
+    console.log(filteredSightings);
 }
