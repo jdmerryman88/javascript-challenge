@@ -33,6 +33,9 @@ function runEnter(event){
     var inputElement = d3.select("#datetime");
     var inputValue = inputElement.property("value");
     console.log(inputValue);
+    
+    
+    // Filters data based on input date
     function filterSightings(date){
 
         return date.datetime == inputValue;
@@ -40,4 +43,17 @@ function runEnter(event){
     var filteredSightings = data.filter(filterSightings);
     
     console.log(filteredSightings);
+    
+    // Inserts only filtered data into chart
+    tbody.html("");
+    filteredSightings.forEach(function (sighting) {
+
+        let row = tbody.append("tr");
+        Object.entries(sighting).forEach(function ([key, value]) {
+            // console.log(key, value);
+            let cell = row.append('td');
+            cell.text(value);
+        });
+    });
+
 }
