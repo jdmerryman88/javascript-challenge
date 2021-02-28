@@ -18,7 +18,7 @@ tableData.forEach(function (sighting) {
 
 
 var button = d3.select("#filter-btn");
-var form = d3.select("#filter-btn");
+var form = d3.select("#datetime");
 
 
 button.on("click", runEnter);
