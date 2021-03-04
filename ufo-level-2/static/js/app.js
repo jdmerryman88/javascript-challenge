@@ -56,35 +56,43 @@ function runEnter(event){
     // console.log(countryValue);
     // console.log(shapeValue);
     
-    
+    var search = [];
+    search.push(inputValue);
+    search.push(cityValue);
+    search.push(stateValue);
+    search.push(countryValue);
+    search.push(shapeValue);
+    console.log(search);
     // // Filters data based on input date
     function filterSightings(date){
 
-        if (inputValue != ""){
-        return date.datetime == inputValue;
+        if (inputValue == "" ){
+            if (cityValue == ""){
+                if (stateValue ==""){
+                    if(countryValue ==""){
+                        return date.shape == shapeValue;
+                    }
+                    else{return date.country == countryValue;}
+                }
+                else{return date.state == stateValue;}
+                
+            }
+            else{return date.city == cityValue;}
         }
         else {
-            return date,
-            console.log('not date added')
-        }
-        
-    };
+            return date.datetime == inputValue;
+                
+        }};
     
-    function filterCity(city){
-        
-        if (cityValue != ""){
-            return filteredSightings.city == cityValue;
-            }
-            else {
-                return city,
-                console.log("no city added") 
-            }
 
+    // var number = [9, 2, 3, 4, 6 , 7, 6 ,6 ,7]
+    // var second = [7, 6]
+    // var final = number.filter(item => second.includes(item));
+    // console.log(final);
 
-    };
 
     var filteredSightings = data.filter(filterSightings);
-        filteredSightings = filteredSightings.filter(filterCity);
+        
     
     console.log(filteredSightings);
     
