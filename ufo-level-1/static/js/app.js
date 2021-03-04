@@ -35,7 +35,14 @@ function runEnter(event){
     console.log(inputValue);
     
     
-    // Filters data based on input date
+    //If no date entered no filetering occurs and logged to console no date entered.
+    if ( inputValue == ""){
+        console.log("No date entered");
+    }
+
+    // If date entered returns filtered data
+    else{
+        // Filters data based on input date
     function filterSightings(date){
 
         return date.datetime == inputValue;
@@ -55,5 +62,7 @@ function runEnter(event){
             cell.text(value);
         });
     });
+    }
+    
 
 }
