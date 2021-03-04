@@ -75,22 +75,13 @@ function runEnter(event){
                     else{return date.country == countryValue;}
                 }
                 else{return date.state == stateValue;}
-                
             }
             else{return date.city == cityValue;}
         }
         else {
-            return date.datetime == inputValue;
-                
+            return date.datetime == inputValue;        
         }};
     
-
-    // var number = [9, 2, 3, 4, 6 , 7, 6 ,6 ,7]
-    // var second = [7, 6]
-    // var final = number.filter(item => second.includes(item));
-    // console.log(final);
-
-
     var filteredSightings = data.filter(filterSightings);
         
     
@@ -109,3 +100,9 @@ function runEnter(event){
     });
 
 }
+
+// Test filtering function
+// var number = [9, 2, 3, 4, 6 , 7, 6 ,6 ,7]
+    // var second = [7, 6]
+    // var final = number.filter(item => second.includes(item));
+    // console.log(final);
