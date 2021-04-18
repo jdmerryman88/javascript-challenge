@@ -9,3 +9,5 @@ In the first project javascript is used to create a table on an html page (ufo-l
 UFO-Level-2
 
 In the second project more fields for fitlering were added to the html file (ufo-level-2/index.html). The added filter options are now by date, city, state, country and shape. The filtering and table population is completed using the ufo-level-2/static/js/app.js file and pulling data from ufo-level-2/static/js/data.js file. This function now allows the user to filter the data using one of the other search fields. 
+
+![Homepage](https://user-images.githubusercontent.com/71932469/115158700-23e7f300-a055-11eb-83c3-f57e17e9cdcd.png)
